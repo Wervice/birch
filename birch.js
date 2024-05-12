@@ -107,13 +107,13 @@ function birch(level, message) {
 			`[FATAL ERROR]\t${getUTCDateTime()}\t${message}\n`,
 		);
 	} else {
-		throw new Error("Spruce does not know this type of logging level");
+		throw new Error("Birch does not know this type of logging level");
 	}
 }
 
 if (typeof birch_path == "undefined") {
 	throw new Error(
-		"Spruce file path is not set.\nPlease define the variable birch_path",
+		"Birch file path is not set.\nPlease define the variable birch_path",
 	);
 }
 
