@@ -48,11 +48,11 @@ function spruce(level, message) {
 			console.log(
 				colorText(`[VERBOSE] @ ${getUTCDateTime()} | ${message}`, "blue"),
 			);
-		}
 		fs.appendFileSync(
 			spruce_path,
 			`[VERBOSE]\t${getUTCDateTime()}\t${message}\n`,
 		);
+		}
 	} else if (
 		level == "succ" ||
 		level == "success" ||
