@@ -7,6 +7,7 @@
     a) Copy contents from birch file into your code
     b) Require/Include/Import... birch file in your code
 2. Define variables
+
 |Variable Name|Description|Example value|
 |-------------|-----------|-------------|
 |birch_path|Path to the log file to write into|`"../birch.log"`|
@@ -15,6 +16,7 @@
 Birch provides one new function: `birch(level, message)`   
 You have to pass a level and a message to the function.   
 Supported levels are:
+
 |Short level name|Level name|Level number|Level letter|
 |----------|----------------|------------|------------|
 |verbo|verbose|0|V|
