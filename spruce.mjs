@@ -42,14 +42,14 @@ function colorText(text, color) {
 	}
 }
 
-function spruce(level, message) {
+function birch(level, message) {
 	if (level == "verb" || level == "verbose" || level == 0 || level == "V") {
-		if (spruce_verbose == true) {
+		if (birch_verbose == true) {
 			console.log(
 				colorText(`[VERBOSE] @ ${getUTCDateTime()} | ${message}`, "blue"),
 			);
 		fs.appendFileSync(
-			spruce_path,
+			birch_path,
 			`[VERBOSE]\t${getUTCDateTime()}\t${message}\n`,
 		);
 		}
@@ -63,7 +63,7 @@ function spruce(level, message) {
 			colorText(`[SUCCESS] @ ${getUTCDateTime()} | ${message}`, "green"),
 		);
 		fs.appendFileSync(
-			spruce_path,
+			birch_path,
 			`[SUCCESS]\t${getUTCDateTime()}\t${message}\n`,
 		);
 	} else if (
@@ -76,7 +76,7 @@ function spruce(level, message) {
 			colorText(`[WARNING] @ ${getUTCDateTime()} | ${message}`, "yellow"),
 		);
 		fs.appendFileSync(
-			spruce_path,
+			birch_path,
 			`[WARNING]\t${getUTCDateTime()}\t${message}\n`,
 		);
 	} else if (
@@ -87,7 +87,7 @@ function spruce(level, message) {
 	) {
 		console.log(colorText(`[ERROR] @ ${getUTCDateTime()} | ${message}`, "red"));
 		fs.appendFileSync(
-			spruce_path,
+			birch_path,
 			`[ERROR]\t\t${getUTCDateTime()}\t${message}\n`,
 		);
 	} else if (
@@ -103,7 +103,7 @@ function spruce(level, message) {
 			),
 		);
 		fs.appendFileSync(
-			spruce_path,
+			birch_path,
 			`[FATAL ERROR]\t${getUTCDateTime()}\t${message}\n`,
 		);
 	} else {
@@ -111,15 +111,15 @@ function spruce(level, message) {
 	}
 }
 
-if (typeof spruce_path == "undefined") {
+if (typeof birch_path == "undefined") {
 	throw new Error(
-		"Spruce file path is not set.\nPlease define the variable spruce_path",
+		"Spruce file path is not set.\nPlease define the variable birch_path",
 	);
 }
 
-if (typeof spruce_verbose == "undefined") {
-	spruce_verbose = true;
+if (typeof birch_verbose == "undefined") {
+	birch_verbose = true;
 }
 
-if (!fs.existsSync(spruce_path))
-	fs.writeFileSync(spruce_path, "Level\t\tTime\t\t\tMessage\n");
+if (!fs.existsSync(birch_path))
+	fs.writeFileSync(birch_path, "Level\t\tTime\t\t\tMessage\n");

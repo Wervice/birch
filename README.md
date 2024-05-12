@@ -16,12 +16,12 @@ Planning to add support for:
 - Some more languages
 
 ## Using Birch
-To use birch, please copy or include the spruce file for your language into your code.
+To use birch, please copy or include the birch file for your language into your code.
 From there you need to set two constants:
-- spruce_path: Location where spruce is supposed to write the log messages to
-- spruce_verbose: Enable verbose messages
+- birch_path: Location where birch is supposed to write the log messages to
+- birch_verbose: Enable verbose messages
 
-Now, you can call the function `spruce(level, message)`. It takes two parameters, level and message. Level can be
+Now, you can call the function `birch(level, message)`. It takes two parameters, level and message. Level can be
 - verb / verbose / 0 / V
 - succ / success / 1 / S
 - warn / warning / 2 / W
