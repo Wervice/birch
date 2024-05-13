@@ -43,6 +43,18 @@ function colorText(text, color) {
 }
 
 function birch(level, message) {
+	if (typeof birch_path == "undefined") {
+		throw new Error(
+			"Birch file path is not set.\nPlease define the variable birch_path",
+		);
+	}
+
+	if (typeof birch_verbose == "undefined") {
+		birch_verbose = true;
+	}
+
+	if (!fs.existsSync(birch_path))	fs.writeFileSync(birch_path, "Level\t\tTime\t\t\tMessage\n");
+
 	if (level == "verb" || level == "verbose" || level == 0 || level == "V") {
 		if (birch_verbose == true) {
 			console.log(
@@ -110,16 +122,3 @@ function birch(level, message) {
 		throw new Error("Birch does not know this type of logging level");
 	}
 }
-
-if (typeof birch_path == "undefined") {
-	throw new Error(
-		"Birch file path is not set.\nPlease define the variable birch_path",
-	);
-}
-
-if (typeof birch_verbose == "undefined") {
-	birch_verbose = true;
-}
-
-if (!fs.existsSync(birch_path))	fs.writeFileSync(birch_path, "Level\t\tTime\t\t\tMessage\n");
-
